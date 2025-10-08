@@ -26,7 +26,7 @@ Aplikasi Antrian berbasis **PHP Native** untuk mengelola sistem antrian secara d
 
 ### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/username/aplikasi-antrian.git
+git clone https://github.com/ghazyal/antrian.git
 ```
 
 ### 2️⃣ Buat Database
