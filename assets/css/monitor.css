@@ -1,0 +1,48 @@
+body {
+    background: linear-gradient(135deg, #007bff 0%, #00aaff 100%);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.loket-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+.loket-card:hover {
+    transform: scale(1.02);
+}
+.loket-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #007bff;
+}
+.small-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #007bff;
+}
+.number {
+    font-size: 150px;
+    font-weight: 800;
+    margin: 10px 0;
+    color: #007bff;
+    transition: all 0.4s ease;
+}
+.next-number {
+    font-weight: 700;
+    color: #007bff;
+}
+@media (max-width: 768px) {
+    .number {
+        font-size: 100px;
+    }
+    .loket-title {
+        font-size: 22px;
+    }
+    .small-text {
+        font-size: 18px;
+    }
+}
