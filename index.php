@@ -41,17 +41,24 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>Ambil Antrian</title>
         <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/styles.css">
     </head>
     <body class="bg-light">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
+        <div class="container vh-100 d-flex justify-content-center align-items-center">
+            <div class="row w-100 justify-content-center">
+                <div class="col-md-8">
+                    <h3 class="text-center mb-4">Ambil Nomor Antrian</h3>
                     <div class="card shadow-sm">
                         <div class="card-body text-center">
-                            <h3>Ambil Nomor Antrian</h3>
-                            <p class="text-muted">Tanggal: <?php echo $today; ?></p>
-                            <p>Menunggu: <strong id="MenungguCount"><?php echo $Menunggu; ?></strong></p>
-                            <button id="btnTake" class="btn btn-primary btn-lg">Ambil Antrian</button>
+                            <div class="row">
+                                <div class="col text-start">
+                                    <p class="text-muted">Tanggal: <?php echo $today; ?></p>
+                                    <p>Menunggu: <strong id="MenungguCount"><?php echo $Menunggu; ?></strong></p>
+                                </div>
+                                <div class="col text-end">
+                                    <button id="btnTake" class="btn btn-primary tombol">Ambil Antrian</button>
+                                </div>
+                            </div>
                             <hr>
                             <small class="text-muted">Setelah klik akan muncul popup cetak struk otomatis.</small>
                         </div>
@@ -72,7 +79,7 @@
                     w.document.write('<html><head><title>Tiket Antrian</title><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="font-family:monospace;text-align:center;padding:20px">');
                     w.document.write('<h2>Bank - Antrian</h2>');
                     w.document.write('<p>Tanggal: '+data.date+'</p>');
-                    w.document.write('<div style="font-size:64px;font-weight:700;margin:18px 0">#'+data.number+'</div>');
+                    w.document.write('<div style="font-size:64px;font-weight:700;margin:18px 0">'+data.number+'</div>');
                     w.document.write('<p>Terima kasih. Silakan tunggu panggilan.</p>');
                     w.document.write('</body></html>');
                     w.document.close();

@@ -38,7 +38,6 @@
                         <div class="mb-3">
                             <div><strong>Loket 1:</strong> <span id="loket1Serving">-</span></div>
                             <div class="mt-1">
-                                <button class="btn btn-primary btn-sm" onclick="assignNext(1)">Panggil Next ke Loket 1</button>
                                 <button class="btn btn-danger btn-sm" onclick="finish(1)">Selesai</button>
                                 <button class="btn btn-warning btn-sm" onclick="skip(1)">Lewati</button>
                             </div>
@@ -47,7 +46,6 @@
                         <div>
                             <div><strong>Loket 2:</strong> <span id="loket2Serving">-</span></div>
                             <div class="mt-1">
-                                <button class="btn btn-primary btn-sm" onclick="assignNext(2)">Panggil Next ke Loket 2</button>
                                 <button class="btn btn-danger btn-sm" onclick="finish(2)">Selesai</button>
                                 <button class="btn btn-warning btn-sm" onclick="skip(2)">Lewati</button>
                             </div>
