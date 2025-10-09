@@ -52,37 +52,35 @@ $today = date('Y-m-d');
     </div>
 
     <script>
-        async function load() {
-            try {
-                const response = await fetch('src/update.php');
-                const data = await response.json();
+    async function load() {
+        try {
+            const response = await fetch('src/update.php');
+            const data = await response.json();
+            const monitorData = data.monitor || [];
 
-                const serving = data.serving || [];
-                const waiting = data.waiting || [];
+            // Loket 1
+            const l1Current = monitorData.find(item => item.loket == 1 && item.status === 'Dilayani');
+            document.getElementById('l1').textContent = l1Current ? '#' + l1Current.number : '-';
 
-                // === LOKET 1 ===
-                const loket1 = serving.find(item => item.loket == 1);
-                document.getElementById('l1').textContent = loket1 ? '#' + loket1.number : '-';
+            const l1Next = monitorData.find(item => item.status === 'Menunggu' && item.number % 2 === 1);
+            document.getElementById('l1next').textContent = l1Next ? 'Berikutnya: #' + l1Next.number : 'Berikutnya: -';
 
-                // Ambil antrian berikutnya dari daftar waiting
-                const next1 = waiting[0]; // yang paling pertama menunggu
-                document.getElementById('l1next').textContent = next1 ? 'Berikutnya: #' + next1.number : 'Berikutnya: -';
+            // Loket 2
+            const l2Current = monitorData.find(item => item.loket == 2 && item.status === 'Dilayani');
+            document.getElementById('l2').textContent = l2Current ? '#' + l2Current.number : '-';
 
-                // === LOKET 2 ===
-                const loket2 = serving.find(item => item.loket == 2);
-                document.getElementById('l2').textContent = loket2 ? '#' + loket2.number : '-';
+            const l2Next = monitorData.find(item => item.status === 'Menunggu' && item.number % 2 === 0);
+            document.getElementById('l2next').textContent = l2Next ? 'Berikutnya: #' + l2Next.number : 'Berikutnya: -';
 
-                const next2 = waiting[1]; // yang kedua menunggu, misal antrian ke-4 dst
-                document.getElementById('l2next').textContent = next2 ? 'Berikutnya: #' + next2.number : 'Berikutnya: -';
-
-            } catch (e) {
-                console.error('Gagal memuat data antrian:', e);
-            }
+        } catch (e) {
+            console.error('Gagal memuat data antrian:', e);
         }
+    }
 
-        setInterval(load, 2000);
-        load();
+    setInterval(load, 2000);
+    load();
     </script>
+
     <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
